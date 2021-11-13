@@ -39,6 +39,7 @@ class FileStorage():
                 with open(self.__file_path, 'r', encoding="utf-8") as f:
                     dicts = json.loads(f.read())
                     for key, value in dicts.items():
-                        self.__objects[key] = eval('{}(**value)'.format(value["__class__"]))
+                        self.__objects[key] = eval(
+                            '{}(**value)'.format(value["__class__"]))
             except Exception:
                 pass
