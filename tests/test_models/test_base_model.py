@@ -19,5 +19,6 @@ class TestBaseModel(unittest.TestCase):
         my_BaseModel = BaseModel()
         self.assertIsInstance(my_BaseModel, BaseModel)
 
+
 if __name__ == '__main__':
     unittest.main()
