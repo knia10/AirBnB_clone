@@ -1,4 +1,10 @@
 #!/usr/bin/python3
+
+"""
+console.py that contains the entry
+point of the command interpreter
+"""
+
 import cmd
 import sys
 from os import isatty
@@ -17,11 +23,16 @@ all_commands = list_commands_arg + list_commands_not_arg
 
 
 class HBNBCommand(cmd.Cmd):
-    """Comments"""
+    """
+    HBNBCommand inherits from cmd.Cmd to be our entry point
+    """
 
     prompt = "(hbnb) "
 
     def default(self, line):
+        """
+        method to advance task
+        """
         args = line.split(".")
 
         model = args[0] if len(args) > 0 else ""
@@ -40,12 +51,14 @@ class HBNBCommand(cmd.Cmd):
                 eval(f"self.do_{command}({model}{arguments})")
             else:
                 eval(f"self.do_{command}({model})")
-                # eval(f"self.do_{command}({model}{arguments})")
         else:
             self.stdout.write(f'*** Unknown syntax: {line}\n')
 
     def do_create(self, arg):
-        """Comment"""
+        """
+        Creates a new instance of BaseModel, saves it
+        (to the JSON file) and prints the id
+        """
 
         try:
             arg = arg.__name__
@@ -62,7 +75,10 @@ class HBNBCommand(cmd.Cmd):
             print(obj.id)
 
     def do_show(self, arg):
-        """Comment"""
+        """
+        Prints the string representation of an
+        instance based on the class name and id
+        """
 
         try:
             arg = arg.__name__
@@ -93,7 +109,10 @@ class HBNBCommand(cmd.Cmd):
                 print("** no instance found **")
 
     def do_all(self, arg):
-        """Comment"""
+        """
+        Prints all string representation of all
+        instances based or not on the class name
+        """
         try:
             arg = arg.__name__
         except Exception:
@@ -117,7 +136,9 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
 
     def do_destroy(self, arg):
-        """Comment"""
+        """
+        Deletes an instance based on the class name and id
+        """
         try:
             arg = arg.__name__
         except Exception:
@@ -150,7 +171,9 @@ class HBNBCommand(cmd.Cmd):
                 print("** no instance found **")
 
     def do_update(self, arg):
-        """Comment"""
+        """
+        Updates an instance based on the class name and id
+        """
 
         list_arg = arg.split(" ")
         if not list_arg[0]:
@@ -159,7 +182,6 @@ class HBNBCommand(cmd.Cmd):
         elif list_arg[0] not in list_obj:
             print("** class doesn't exist **")
             return False
-        # class_name = list_arg[0]
         if len(list_arg) < 2:
             print("** instance id missing **")
             return False
@@ -199,7 +221,9 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
 
     def do_quit(self, arg):
-        """Comment"""
+        """
+        quit and EOF to exit the program
+        """
         return True
 
     def do_EOF(self, arg):
@@ -207,6 +231,9 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def emptyline(self):
+        """
+        ENTER shouldn’t execute anything
+        """
         return False
 
 

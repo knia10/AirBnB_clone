@@ -7,6 +7,11 @@ import sys
 import datetime
 from os.path import exists
 from models.base_model import BaseModel
+from models.user import User
+from models.place import Place
+from models.city import City
+from models.review import Review
+from models.state import State
 
 
 class FileStorage():
@@ -39,6 +44,7 @@ class FileStorage():
                 with open(self.__file_path, 'r', encoding="utf-8") as f:
                     dicts = json.loads(f.read())
                     for key, value in dicts.items():
-                        self.__objects[key] = eval('{}(**value)'.format(value["__class__"]))
+                        self.__objects[key] = eval(
+                            '{}(**value)'.format(value["__class__"]))
             except Exception:
                 pass
