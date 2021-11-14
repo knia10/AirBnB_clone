@@ -3,6 +3,7 @@
 Instantiating City
 """
 import models
+from models import city
 from models.base_model import BaseModel
 from models.city import City
 import unittest
@@ -35,10 +36,10 @@ class TestCity(unittest.TestCase):
 
     def test_attributes(self):
         '''Test Attributes'''
-        self.assertTrue(hasattr(City, "__init__"))
-        self.assertTrue(hasattr(City, "__str__"))
-        self.assertTrue(City, "state_id")
-        self.assertTrue(City, "name")
+        self.assertTrue(hasattr(city, "__init__"))
+        self.assertTrue(hasattr(city, "__str__"))
+        self.assertTrue(city, "state_id")
+        self.assertTrue(city, "name")
 
     def test_pycodestyle(self):
         """Test style PEP8."""

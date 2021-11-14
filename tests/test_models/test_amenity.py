@@ -3,6 +3,7 @@
 Instantiating Users
 """
 import models
+from models import amenity
 from models.base_model import BaseModel
 from models.amenity import Amenity
 import unittest
@@ -35,9 +36,9 @@ class TestAmenity(unittest.TestCase):
 
     def test_attributes(self):
         '''Teste Atributes'''
-        self.assertTrue(hasattr(Amenity, "__init__"))
-        self.assertTrue(hasattr(Amenity, "__str__"))
-        self.assertTrue(Amenity, "name")
+        self.assertTrue(hasattr(amenity, "__init__"))
+        self.assertTrue(hasattr(amenity, "__str__"))
+        self.assertTrue(amenity, "name")
 
     def test_pycodestyle(self):
         """Test style PEP8."""

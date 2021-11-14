@@ -3,6 +3,7 @@
 Instantiating Place
 """
 import models
+from models import place
 from models.base_model import BaseModel
 from models.place import Place
 import unittest
@@ -44,16 +45,16 @@ class TestPlace(unittest.TestCase):
 
     def test_attributes(self):
         '''Test Attributes'''
-        self.assertTrue(hasattr(Place, "__init__"))
-        self.assertTrue(hasattr(Place, "__str__"))
-        self.assertTrue(Place, "name")
-        self.assertTrue(Place, "description")
-        self.assertTrue(Place, "number_rooms")
-        self.assertTrue(Place, "number_bathrooms")
-        self.assertTrue(Place, "max_guest")
-        self.assertTrue(Place, "price_by_night")
-        self.assertTrue(Place, "latitude")
-        self.assertTrue(Place, "amenity_ids")
+        self.assertTrue(hasattr(place, "__init__"))
+        self.assertTrue(hasattr(place, "__str__"))
+        self.assertTrue(place, "name")
+        self.assertTrue(place, "description")
+        self.assertTrue(place, "number_rooms")
+        self.assertTrue(place, "number_bathrooms")
+        self.assertTrue(place, "max_guest")
+        self.assertTrue(place, "price_by_night")
+        self.assertTrue(place, "latitude")
+        self.assertTrue(place, "amenity_ids")
 
     def test_pycodestyle(self):
         """Test style PEP8."""
