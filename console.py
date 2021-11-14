@@ -223,6 +223,9 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
 
     def do_count(self, arg):
+        """
+        Method to count Models
+        """
         try:
             arg = arg.__name__
         except Exception:
