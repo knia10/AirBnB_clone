@@ -31,14 +31,14 @@ class HBNBCommand(cmd.Cmd):
 
     def default(self, line):
         """
-        method to advance task
+        Method to advance task
         """
         args = line.split(".")
 
         model = args[0] if len(args) > 0 else ""
         command = args[1] if len(args) > 1 else ""
-        arguments = f" {command.split('(')[1][:-1]}" \
-            if "(" in line and ")" in line else ""
+        arguments = command.split(
+            "(")[1][:-1].replace("\"", "").replace(",", "")
 
         if "(" in command and ")" in command:
             for word in command.split("("):
@@ -46,11 +46,10 @@ class HBNBCommand(cmd.Cmd):
                 if word in all_commands:
                     command = word
                     break
-
         if model in list_obj and command in all_commands:
             if len(arguments) > 1 and command in list_commands_arg:
                 command = command[:-2]
-                eval(f"self.do_{command}('{model}{arguments}')")
+                eval(f"self.do_{command}('{model} {arguments}')")
             else:
                 command = command[:-2]
                 eval(f"self.do_{command}({model})")
