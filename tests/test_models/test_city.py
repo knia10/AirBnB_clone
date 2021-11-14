@@ -52,7 +52,7 @@ class TestCity(unittest.TestCase):
         Test style PEP8.
         """
         pep8style = pycodestyle.StyleGuide(quiet=True)
-        result = pep8style.check_files(['models/City.py'])
+        result = pep8style.check_files(['models/city.py'])
         self.assertEqual(result.total_errors, 0, "code style errors")
 
     @classmethod

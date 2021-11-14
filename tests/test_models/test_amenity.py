@@ -49,7 +49,7 @@ class TestAmenity(unittest.TestCase):
         Test style PEP8.
         """
         pep8style = pycodestyle.StyleGuide(quiet=True)
-        result = pep8style.check_files(['models/Amenity.py'])
+        result = pep8style.check_files(['models/amenity.py'])
         self.assertEqual(result.total_errors, 0, "code style errors")
 
     @classmethod
