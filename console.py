@@ -34,7 +34,7 @@ class HBNBCommand(cmd.Cmd):
         """
         Method to advance task
         """
-        if not "." in line:
+        if "." not in line:
             self.stdout.write(f'*** Unknown syntax: {line}\n')
             return False
         args = line.split(".")
