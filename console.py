@@ -17,7 +17,7 @@ from models.review import Review
 from models.state import State
 
 list_obj = ["BaseModel", "User", "Place", "City", "Review", "State"]
-list_commands_arg = ["show()", "destroy()", "update()"]
+list_commands_arg = ["show()", "destroy()", "update()", "count()"]
 list_commands_not_arg = ["create()", "all()"]
 all_commands = list_commands_arg + list_commands_not_arg
 
@@ -221,6 +221,21 @@ class HBNBCommand(cmd.Cmd):
         models.storage.save()
         if found_it is False:
             print("** no instance found **")
+
+    def do_count(self, arg):
+        try:
+            arg = arg.__name__
+        except Exception:
+            pass
+
+        all_objs = models.storage.all()
+        count = 0
+
+        if arg in list_obj:
+            for obj_id in all_objs.keys():
+                if all_objs[obj_id].__class__.__name__ == arg:
+                    count = count + 1
+            print(count)
 
     def do_quit(self, arg):
         """
