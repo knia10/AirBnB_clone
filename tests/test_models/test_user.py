@@ -18,7 +18,7 @@ class TestUser(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         '''Test'''
-        print('------------Init Testing---------------\n')
+        print('\n****************** Init Testing ******************\n')
         cls.my_user = User()
         cls.my_user.first_name = "Betty"
         cls.my_user.last_name = "Bar"
@@ -41,11 +41,8 @@ class TestUser(unittest.TestCase):
         self.assertIs(type(self.my_user.email), str)
         self.assertIs(type(self.my_user.password), str)
 
-    def test_type_instance(self):
-        """
-        type instance
-        """
     def test_attributes(self):
+        '''Test Attributes'''
         self.assertTrue(hasattr(user, "__init__"))
         self.assertTrue(hasattr(user, "__str__"))
         self.assertTrue(user, "first_name")
@@ -62,6 +59,7 @@ class TestUser(unittest.TestCase):
     @classmethod
     def tearDownClass(cls):
         '''Test'''
+        print('\n****************** Finish Testing ******************\n')
 
 
 if __name__ == '__main__':
