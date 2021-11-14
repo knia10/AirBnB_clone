@@ -17,7 +17,9 @@ class TestUser(unittest.TestCase):
     """
     @classmethod
     def setUpClass(cls):
-        '''Test'''
+        """
+        Test
+        """
         print('\n****************** Init Testing ******************\n')
         cls.my_user = User()
         cls.my_user.first_name = "Betty"
@@ -42,7 +44,9 @@ class TestUser(unittest.TestCase):
         self.assertIs(type(self.my_user.password), str)
 
     def test_attributes(self):
-        '''Test Attributes'''
+        """
+        Test Attributes
+        """
         self.assertTrue(hasattr(User, "__init__"))
         self.assertTrue(hasattr(User, "__str__"))
         self.assertTrue(User, "first_name")
@@ -51,14 +55,18 @@ class TestUser(unittest.TestCase):
         self.assertTrue(User, "password")
 
     def test_pycodestyle(self):
-        """Test style PEP8."""
+        """
+        Test style PEP8.
+        """
         pep8style = pycodestyle.StyleGuide(quiet=True)
         result = pep8style.check_files(['models/user.py'])
         self.assertEqual(result.total_errors, 0, "code style errors")
 
     @classmethod
     def tearDownClass(cls):
-        '''Test'''
+        """
+        Test
+        """
         print('\n****************** Finish Testing ******************\n')
 
 

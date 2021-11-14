@@ -16,7 +16,10 @@ class TestPlace(unittest.TestCase):
     """
     @classmethod
     def setUpClass(cls):
-        '''Test'''
+        """
+        Test
+        """
+
         print('\n****************** Init Testing ******************\n')
         cls.my_Place = Place()
 
@@ -44,7 +47,10 @@ class TestPlace(unittest.TestCase):
         self.assertIs(type(self.my_Place.amenity_ids), list)
 
     def test_attributes(self):
-        '''Test Attributes'''
+        """
+        Test Attributes
+        """
+
         self.assertTrue(hasattr(Place, "__init__"))
         self.assertTrue(hasattr(Place, "__str__"))
         self.assertTrue(Place, "name")
@@ -57,14 +63,19 @@ class TestPlace(unittest.TestCase):
         self.assertTrue(Place, "amenity_ids")
 
     def test_pycodestyle(self):
-        """Test style PEP8."""
+        """
+        Test style PEP8.
+        """
         pep8style = pycodestyle.StyleGuide(quiet=True)
         result = pep8style.check_files(['models/place.py'])
         self.assertEqual(result.total_errors, 0, "code style errors")
 
     @classmethod
     def tearDownClass(cls):
-        '''Test'''
+        """
+        Test
+        """
+
         print('\n****************** Finish Testing ******************\n')
 
 

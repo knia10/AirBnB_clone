@@ -17,7 +17,9 @@ class TestState(unittest.TestCase):
     """
     @classmethod
     def setUpClass(cls):
-        '''Test'''
+        """
+        Test
+        """
         print('\n****************** Init Testing ******************\n')
         cls.my_state = State()
 
@@ -40,14 +42,18 @@ class TestState(unittest.TestCase):
         self.assertTrue(State, "name")
 
     def test_pycodestyle(self):
-        """Test style PEP8."""
+        """
+        Test style PEP8.
+        """
         pep8style = pycodestyle.StyleGuide(quiet=True)
         result = pep8style.check_files(['models/state.py'])
         self.assertEqual(result.total_errors, 0, "code style errors")
 
     @classmethod
     def tearDownClass(cls):
-        '''Test'''
+        """
+        Test
+        """
         print('\n****************** Finish Testing ******************\n')
 
 

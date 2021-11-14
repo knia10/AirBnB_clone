@@ -17,7 +17,9 @@ class TestAmenity(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        '''Test'''
+        """
+        Test
+        """
         print('\n****************** Init Testing ******************\n')
         cls.my_Amenity = Amenity()
 
@@ -35,20 +37,26 @@ class TestAmenity(unittest.TestCase):
         self.assertIs(type(self.my_Amenity.name), str)
 
     def test_attributes(self):
-        '''Teste Atributes'''
+        """
+        Teste Atributes
+        """
         self.assertTrue(hasattr(Amenity, "__init__"))
         self.assertTrue(hasattr(Amenity, "__str__"))
         self.assertTrue(Amenity, "name")
 
     def test_pycodestyle(self):
-        """Test style PEP8."""
+        """
+        Test style PEP8.
+        """
         pep8style = pycodestyle.StyleGuide(quiet=True)
         result = pep8style.check_files(['models/Amenity.py'])
         self.assertEqual(result.total_errors, 0, "code style errors")
 
     @classmethod
     def tearDownClass(cls):
-        '''Test'''
+        """
+        Test
+        """
         print('\n****************** Finish Testing ******************\n')
 
 
