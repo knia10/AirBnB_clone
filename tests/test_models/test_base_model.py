@@ -11,12 +11,12 @@ class TestBaseModel(unittest.TestCase):
     """
     Starting Test.
     """
-
     @classmethod
     def setUpClass(cls):
         """
         Init testing enviroment
         """
+        print('\n****************** Init Testing ******************\n')
         ...
 
     def test_split(self):
@@ -57,6 +57,11 @@ class TestBaseModel(unittest.TestCase):
         my_2BaseModel = my_BaseModel.updated_at
         self.assertNotEqual(my_1BaseModel, my_2BaseModel)
 
+    def test_to_dict(self):
+        """
+
+        """
+
     def test_style(self):
         """
         Check if the file had correct style
@@ -71,6 +76,7 @@ class TestBaseModel(unittest.TestCase):
         """
         Clear testing enviroment
         """
+        print('\n****************** Finish Testing ******************\n')
         ...
 
 
