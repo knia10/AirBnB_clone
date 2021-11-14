@@ -37,19 +37,22 @@ class HBNBCommand(cmd.Cmd):
 
         model = args[0] if len(args) > 0 else ""
         command = args[1] if len(args) > 1 else ""
-        arguments = f" {command.split('(')[1][:-1]}" if len(args) > 1 else ""
+        arguments = f" {command.split('(')[1][:-1]}" \
+            if "(" in line and ")" in line else ""
 
-        for word in command.split("("):
-            word = word + "()"
-            if word in all_commands:
-                command = word
-                break
+        if "(" in command and ")" in command:
+            for word in command.split("("):
+                word = word + "()"
+                if word in all_commands:
+                    command = word
+                    break
 
         if model in list_obj and command in all_commands:
-            command = command[:-2]
             if len(arguments) > 1 and command in list_commands_arg:
-                eval(f"self.do_{command}({model}{arguments})")
+                command = command[:-2]
+                eval(f"self.do_{command}('{model}{arguments}')")
             else:
+                command = command[:-2]
                 eval(f"self.do_{command}({model})")
         else:
             self.stdout.write(f'*** Unknown syntax: {line}\n')
