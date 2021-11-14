@@ -59,8 +59,10 @@ class TestBaseModel(unittest.TestCase):
 
     def test_to_dict(self):
         """
-
         """
+        my_BaseModel = BaseModel()
+        my_dict = my_BaseModel.to_dict()
+        self.assertIs(type(my_dict), dict)
 
     def test_style(self):
         """
