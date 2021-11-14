@@ -59,6 +59,7 @@ class TestBaseModel(unittest.TestCase):
 
     def test_to_dict(self):
         """
+        Test to dict
         """
         my_BaseModel = BaseModel()
         my_dict = my_BaseModel.to_dict()
