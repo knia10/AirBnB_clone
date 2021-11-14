@@ -38,11 +38,11 @@ class TestReview(unittest.TestCase):
 
     def test_attributes(self):
         '''Test Attributes'''
-        self.assertTrue(hasattr(review, "__init__"))
-        self.assertTrue(hasattr(review, "__str__"))
-        self.assertTrue(review, "place_id")
-        self.assertTrue(review, "user_id")
-        self.assertTrue(review, "text")
+        self.assertTrue(hasattr(Review, "__init__"))
+        self.assertTrue(hasattr(Review, "__str__"))
+        self.assertTrue(Review, "place_id")
+        self.assertTrue(Review, "user_id")
+        self.assertTrue(Review, "text")
 
     def test_pycodestyle(self):
         """Test style PEP8."""

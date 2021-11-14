@@ -35,9 +35,9 @@ class TestState(unittest.TestCase):
         self.assertIs(type(self.my_state.name), str)
 
     def test_attributes(self):
-        self.assertTrue(hasattr(state, "__init__"))
-        self.assertTrue(hasattr(state, "__str__"))
-        self.assertTrue(state, "name")
+        self.assertTrue(hasattr(State, "__init__"))
+        self.assertTrue(hasattr(State, "__str__"))
+        self.assertTrue(State, "name")
 
     def test_pycodestyle(self):
         """Test style PEP8."""

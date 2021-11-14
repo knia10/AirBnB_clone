@@ -36,10 +36,10 @@ class TestCity(unittest.TestCase):
 
     def test_attributes(self):
         '''Test Attributes'''
-        self.assertTrue(hasattr(city, "__init__"))
-        self.assertTrue(hasattr(city, "__str__"))
-        self.assertTrue(city, "state_id")
-        self.assertTrue(city, "name")
+        self.assertTrue(hasattr(City, "__init__"))
+        self.assertTrue(hasattr(City, "__str__"))
+        self.assertTrue(City, "state_id")
+        self.assertTrue(City, "name")
 
     def test_pycodestyle(self):
         """Test style PEP8."""

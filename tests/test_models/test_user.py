@@ -43,12 +43,12 @@ class TestUser(unittest.TestCase):
 
     def test_attributes(self):
         '''Test Attributes'''
-        self.assertTrue(hasattr(user, "__init__"))
-        self.assertTrue(hasattr(user, "__str__"))
-        self.assertTrue(user, "first_name")
-        self.assertTrue(user, "last_name")
-        self.assertTrue(user, "email")
-        self.assertTrue(user, "password")
+        self.assertTrue(hasattr(User, "__init__"))
+        self.assertTrue(hasattr(User, "__str__"))
+        self.assertTrue(User, "first_name")
+        self.assertTrue(User, "last_name")
+        self.assertTrue(User, "email")
+        self.assertTrue(User, "password")
 
     def test_pycodestyle(self):
         """Test style PEP8."""

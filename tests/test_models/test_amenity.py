@@ -36,9 +36,9 @@ class TestAmenity(unittest.TestCase):
 
     def test_attributes(self):
         '''Teste Atributes'''
-        self.assertTrue(hasattr(amenity, "__init__"))
-        self.assertTrue(hasattr(amenity, "__str__"))
-        self.assertTrue(amenity, "name")
+        self.assertTrue(hasattr(Amenity, "__init__"))
+        self.assertTrue(hasattr(Amenity, "__str__"))
+        self.assertTrue(Amenity, "name")
 
     def test_pycodestyle(self):
         """Test style PEP8."""
