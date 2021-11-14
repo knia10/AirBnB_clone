@@ -63,6 +63,8 @@ class TestBaseModel(unittest.TestCase):
         my_BaseModel = BaseModel()
         my_dict = my_BaseModel.to_dict()
         self.assertIs(type(my_dict), dict)
+        self.assertIs(type(my_dict['created_at']), str)
+        self.assertIs(type(my_dict['updated_at']), str)
 
     def test_style(self):
         """
