@@ -40,7 +40,6 @@ class TestCity(unittest.TestCase):
         self.assertTrue(City, "state_id")
         self.assertTrue(City, "name")
 
-
     def test_pycodestyle(self):
         """Test style PEP8."""
         pep8style = pycodestyle.StyleGuide(quiet=True)
@@ -51,7 +50,6 @@ class TestCity(unittest.TestCase):
     def tearDownClass(cls):
         '''Test'''
         print('\n****************** Finish Testing ******************\n')
-
 
 
 if __name__ == '__main__':
