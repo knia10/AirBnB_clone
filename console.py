@@ -15,8 +15,9 @@ from models.place import Place
 from models.city import City
 from models.review import Review
 from models.state import State
+from models.amenity import Amenity
 
-list_obj = ["BaseModel", "User", "Place", "City", "Review", "State"]
+list_obj = ["BaseModel", "User", "Place", "City", "Review", "State", "Amenity"]
 list_commands_arg = ["show()", "destroy()", "update()", "count()"]
 list_commands_not_arg = ["create()", "all()"]
 all_commands = list_commands_arg + list_commands_not_arg
