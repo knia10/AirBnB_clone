@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 """
-Comments
+Contain all those classes that inherit from BaseModel
 """
 from models.base_model import BaseModel
 
 
 class Amenity(BaseModel):
     """
-    Comments
+    Public class attributes
     """
     name = ""

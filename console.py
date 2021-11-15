@@ -251,7 +251,9 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def do_EOF(self, arg):
-        """Comment"""
+        """
+        EOF to exit the program
+        """
         return True
 
     def emptyline(self):

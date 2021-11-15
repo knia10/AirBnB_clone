@@ -1,11 +1,15 @@
 #!/usr/bin/python3
-'''Coments'''
+'''
+Contain class User that inherits from BaseModel
+'''
 
 from models.base_model import BaseModel
 
 
 class User(BaseModel):
-    '''Coments'''
+    '''
+    Public class attributes: email, password, first_name, last_name
+    '''
 
     email = ""
     password = ""

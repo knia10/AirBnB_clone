@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Comments
+Contains class FileStorage
+serializes instances to a JSON file and deserializes JSON file to instances:
 """
 import json
 import sys
@@ -15,21 +16,30 @@ from models.state import State
 from models.amenity import Amenity
 
 
-class FileStorage():
-    """Comments"""
+class FileStorage:
+    """
+    Contains private attributes
+    """
     __file_path = "file.json"
     __objects = {}
 
     def all(self):
-        """comment"""
+        """
+        Returns the dictionary __objects
+        """
         return self.__objects
 
     def new(self, obj):
-        """comment"""
-        self.__objects[f"{obj.__class__.__name__}.{obj.id}"] = obj
+        """
+        Sets in __objects the obj with key <obj class name>.id
+        """
+        if obj:
+            self.__objects[f"{obj.__class__.__name__}.{obj.id}"] = obj
 
     def save(self):
-        """comment"""
+        """
+        Serializes __objects to the JSON file
+        """
         dict_a = {}
 
         for key in self.__objects:
@@ -39,7 +49,9 @@ class FileStorage():
             json.dump(dict_a, f)
 
     def reload(self):
-        """comment"""
+        """
+        Deserializes the JSON file to __objects
+        """
         if exists(self.__file_path):
             try:
                 with open(self.__file_path, 'r', encoding="utf-8") as f:

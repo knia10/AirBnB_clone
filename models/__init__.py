@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Comments"""
+"""
+Create a unique FileStorage instance for your application
+"""
 from models.engine.file_storage import FileStorage
 
 storage = FileStorage()

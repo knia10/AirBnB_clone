@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 """
-Comments
+Contain all those classes that inherit from BaseModel
 """
 from models.base_model import BaseModel
 
 
 class City(BaseModel):
     """
-    Comments
+    Contain Public class attributes
     """
     state_id = ""
     name = ""
