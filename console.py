@@ -107,7 +107,8 @@ class HBNBCommand(cmd.Cmd):
             found_it = False
             all_objs = models.storage.all()
             for obj_id in all_objs.keys():
-                if all_objs[obj_id].id == id_recieved:
+                if all_objs[obj_id].id == id_recieved\
+                        and all_objs[obj_id].__class__.__name__ == model:
                     found_it = True
                     obj = all_objs[obj_id]
                     print(obj)
@@ -169,7 +170,8 @@ class HBNBCommand(cmd.Cmd):
             all_objs = models.storage.all()
             copy = all_objs.copy()
             for obj_id in copy.keys():
-                if copy[obj_id].id == id_recieved:
+                if copy[obj_id].id == id_recieved\
+                        and copy[obj_id].__class__.__name__ == model:
                     found_it = True
                     all_objs.pop(obj_id)
             models.storage.save()
@@ -196,7 +198,8 @@ class HBNBCommand(cmd.Cmd):
         all_objs = models.storage.all()
         copy = all_objs.copy()
         for obj_id in copy.keys():
-            if copy[obj_id].id == id_recieved:
+            if copy[obj_id].id == id_recieved and\
+                    copy[obj_id].__class__.__name__ == list_arg[0]:
                 found_it = True
                 if len(list_arg) < 3:
                     print("** attribute name missing **")
